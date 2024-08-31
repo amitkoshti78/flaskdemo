@@ -1,0 +1,57 @@
+/* General Body Styling */
+body {
+    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container Styling */
+.container {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Label Styling */
+.form-label {
+    font-weight: bold;
+}
+
+/* Textarea Custom Styling */
+.payloadArea {
+    height: 100px;
+    resize: none;
+}
+
+/* Submit Button Styling */
+button[type="submit"] {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Submit Button Hover Effect */
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 576px) {
+    .container {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    #payloadArea {
+        height: 150px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}

@@ -1,0 +1,4 @@
+Flask
+Flask_cors
+Psycopg2
+Psycopg2-binary

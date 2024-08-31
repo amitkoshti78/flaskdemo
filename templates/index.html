@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Customer</title>
+    <!-- Link to custom styles -->
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Search Customer</h1>
+
+        <!-- Angular Form -->
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <form ng-submit="submitForm()">
+                <!-- Environment Selector -->
+                <div class="mb-3">
+                    <label for="critria" class="form-label">Select Criteria</label>
+                    <select class="form-select" ng-model="formData.criteria" required title="criteria">
+                        <option value="" disabled>Select Search Criteria</option>
+                        <option value="cust_fname">First name</option>
+                        <option value="cust_lname">Last name</option>
+                        <option value="cust_id">Customer Id</option>
+                    </select>
+                </div>
+
+                <!-- Payload Text Area -->
+                <div class="mb-3">
+                    <label for="payloadArea" class="form-label">Enter Data</label>
+                    <textarea id="payloadArea" class="form-control" ng-model="formData.payload" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            </form>
+             <!-- Response Field -->
+             <div class="mt-4">
+                <label for="customerID" class="form-label">Customer ID</label>
+                <textarea id="customerID" class="form-control" ng-model="customerID" readonly></textarea>
+                
+            </div>
+            <div class="mt-4">
+                <label for="custFname" class="form-label">First Name</label>
+                <textarea id="custFname" class="form-control" ng-model="custFname" readonly></textarea>  
+            </div>  
+            <div class="mt-4">
+                <label for="custLname" class="form-label">Last Name</label>
+                <textarea id="custLname" class="form-control" ng-model="custLname" readonly></textarea>  
+            </div>  
+            <div class="mt-4">
+                <label for="birthdate" class="form-label">Birth Date</label>
+                <textarea id="birthdate" class="form-control" ng-model="birthdate" readonly></textarea>  
+            </div>  
+            <div class="mt-4">
+                <label for="gender" class="form-label">Gender</label>
+                <textarea id="gender" class="form-control" ng-model="gender" readonly></textarea>  
+            </div>  
+        </div>
+    </div>
+
+    <!-- Include AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- Link to custom app.js -->
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
